@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/league.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <a href="https://get.webgl.org/">
+            <img
+              src="./examples/assets/web-gl.png"
+              alt="web-gl logo"
+              style="
+                height: 180px;
+                margin: 0 auto 4rem auto;
+                background: transparent;
+              "
+              class="demo-logo"
+            />
+          </a>
+          <h3>Presentation by topic WebGL/Three.js</h3>
+          <p>
+            <small
+              >Created by
+              <a href="https://github.com/MarinaZai">Marina Zaitseva</a></small
+            >
+          </p>
+        </section>
+
+        <section >
+          <h3 class="fragment" data-fragment-index="1">What is WebGL?</h3>
+          <p class="fragment" data-fragment-index="2">
+            WebGL (Web Graphics Library) is a software interface for creating
+            interactive web graphics that allows us to see three—dimensional
+            content right in the browser.
+          </p>
+          <img
+            class="fragment"
+            data-fragment-index="3"
+            src="https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/300793958_169425612295962_4556501694588526370_n.png?_nc_cat=106&ccb=1-7&_nc_sid=e3f864&_nc_ohc=7pidO0iHgUQAX99wg8s&_nc_ht=scontent-waw1-1.xx&oh=00_AfDBCQ4Ui5Jz3_yc3egkg_2pjUQ_PWppzj-Mm-tEfnu7HA&oe=63D6A266"
+            alt=""
+            srcset=""
+          />
+        </section>
+
+        <section>
+          <h3 class="fragment" data-fragment-index="1">
+            How did it all start?
+          </h3>
+          <p
+            style="font-size: 26px; color: black; margin: 10px"
+            class="fragment"
+            data-fragment-index="2"
+          >
+            HTML5 - 2014 year.
+          </p>
+          <p
+            style="font-size: 26px; color: black; margin: 10px"
+            class="fragment"
+            data-fragment-index="3"
+          >
+            Elements such as VIDEO, AUDIO and CANVAS appear. Canvas makes it
+            possible to draw various elements on the page: text, lines, shapes,
+            images.
+          </p>
+          <p
+            style="font-size: 26px; color: black; margin: 10px"
+            class="fragment"
+            data-fragment-index="4"
+          >
+            Canvas for drawing = HTML5 — Canvas element.
+          </p>
+          <p
+            style="font-size: 26px; color: black; margin: 10px"
+            class="fragment"
+            data-fragment-index="5"
+          >
+            Brushes and paints = JavaScript and GLSL programming languages.
+          </p>
+          <img
+            class="fragment"
+            data-fragment-index="6"
+            src="https://phonoteka.org/uploads/posts/2021-04/thumbs/1618640256_6-phonoteka_org-p-fon-kraski-kisti-7.jpg"
+            alt=""
+          />
+        </section>
+
+        <section>
+          <h3 class="fragment" data-fragment-index="1">How does it work?</h3>
+          <p
+            style="font-size: 28px; color: white; margin: 10px"
+            class="fragment"
+            data-fragment-index="2"
+          >
+            In a 3D scene, each point is a vertex X, Y, Z.
+          </p>
+          <p
+            style="font-size: 28px; color: white; margin: 10px"
+            class="fragment"
+            data-fragment-index="3"
+          >
+            The vertices connect and form primitives.
+          </p>
+          <p
+            style="font-size: 28px; color: white; margin: 10px"
+            class="fragment"
+            data-fragment-index="4"
+          >
+            The light source is the creation of shadows and image depth.
+          </p>
+          <p
+            style="font-size: 28px; color: white; margin: 10px"
+            class="fragment"
+            data-fragment-index="5"
+          >
+            Primitives are transformed to create three-dimensional vector
+            graphics in the form of a projection of a two-dimensional pixel, as
+            a result, the brain sees a three-dimensional object on a
+            two-dimensional computer screen.
+          </p>
+        </section>
+
+        <section>
+          <h3 class="fragment" data-fragment-index="1">
+            There are two types of functions:
+          </h3>
+          <p
+            style="font-size: 24px; color: white; margin: 10px"
+            class="fragment"
+            data-fragment-index="2"
+          >
+            •fragment shaders
+          </p>
+          <p
+            style="font-size: 24px; color: white; margin: 10px"
+            class="fragment"
+            data-fragment-index="3"
+          >
+            •vertex shaders
+          </p>
+          <p
+            style="font-size: 24px; color: white; margin: 10px"
+            class="fragment"
+            data-fragment-index="4"
+          >
+            They use the GL shader language.
+          </p>
+          <img
+            class="fragment"
+            data-fragment-index="5"
+            src="https://coderlessons.com/wp-content/uploads/2019/07/fragment_shader.jpg"
+            alt=""
+          />
+        </section>
+
+        <section>
+          <p
+            style="font-size: 26px; color: black; margin: 20px"
+            class="fragment"
+            data-fragment-index="1"
+          >
+            The vertex shader calculates the coordinates of the vertices, and
+            the fragment shader calculates the colors of pixels.
+          </p>
+          <p
+            style="font-size: 26px; color: black; margin: 20px"
+            class="fragment"
+            data-fragment-index="2"
+          >
+            The dimming process = too much load on the CPU.
+          </p>
+          <p
+            style="font-size: 26px; color: black; margin: 20px"
+            class="fragment"
+            data-fragment-index="3"
+          >
+            WebGL uses graphics processing units (GPU).
+          </p>
+          <p
+            style="font-size: 26px; color: black; margin: 20px"
+            class="fragment"
+            data-fragment-index="4"
+          >
+            The goal of the GPU is to draw graphics at lightning speed.
+          </p>
+        </section>
+
+        <section>
+          <p
+            style="font-size: 30px; color: white; margin: 30px"
+            class="fragment"
+            data-fragment-index="1"
+          >
+            Total = hardware rendering.
+          </p>
+          <p
+            style="font-size: 30px; color: white; margin: 30px"
+            class="fragment"
+            data-fragment-index="2"
+          >
+            Hardware rendering = a lot of freedom for creativity and creating
+            graphics on the site.
+          </p>
+        </section>
+
+        <section>
+          <p style="font-size: 24px; color: black; margin: 30px">Example</p>
+          <a href="https://rainforest.arkivert.no/#kart">
+            <img src="./examples/assets/link.png" alt="" />
+          </a>
+          <p style="font-size: 24px; color: black; margin: 30px">
+            Click on image and go to site.
+          </p>
+        </section>
+
+        <section>
+          <h3 class="fragment" data-fragment-index="1">Advantages of WebGL:</h3>
+          <p class="fragment" data-fragment-index="2">1. Performance</p>
+          <p class="fragment" data-fragment-index="3">
+            2. Interactivity<br />
+            <a href="https://partner.viscircle.com/VWPolo/"
+              >Click for example</a
+            >
+          </p>
+          <p class="fragment" data-fragment-index="4">
+            3. Attracting attention<br />
+            <a href="http://thisisclimate.com/">Click for example</a>
+          </p>
+        </section>
+
+        <section>
+          <h3 class="fragment" data-fragment-index="1">Three.js</h3>
+          <p
+            style="font-size: 24px; color: black; margin: 30px"
+            class="fragment"
+            data-fragment-index="2"
+          >
+            is one of the JavaScript libraries that serves as an auxiliary tool
+            when working with 3D graphics in WebGL.
+          </p>
+          <a
+            class="fragment"
+            data-fragment-index="3"
+            href="https://threejs.org/"
+          >
+            <img
+              src="https://blog.logrocket.com/wp-content/uploads/2020/12/threejs-geometries-materials.png"
+              alt=""
+            />
+          </a>
+          <p>Click image and go to site</p>
+        </section>
+
+        <section>
+          <h3>Three.js is in the works:</h3>
+          <p
+            style="font-size: 24px; color: black; margin: 30px"
+            class="fragment"
+            data-fragment-index="1"
+          >
+            "THE SCENE"
+          </p>
+          <p
+            style="font-size: 24px; color: black; margin: 30px"
+            class="fragment"
+            data-fragment-index="2"
+          >
+            "CAMERA"
+          </p>
+          <p
+            style="font-size: 24px; color: black; margin: 30px"
+            class="fragment"
+            data-fragment-index="3"
+          >
+            "RENDER"
+          </p>
+          <p
+            style="font-size: 24px; color: black; margin: 30px"
+            class="fragment"
+            data-fragment-index="4"
+          >
+            "LIGHTING"
+          </p>
+          <p
+            style="font-size: 24px; color: black; margin: 30px"
+            class="fragment"
+            data-fragment-index="5"
+          >
+            "OBJECTS" AND THEIR MATERIALS
+          </p>
+        </section>
+
+        <section>
+          <h3>In Three.js applies 4 types of cameras:</h3>
+          <p
+            style="font-size: 28px; color: white; margin: 30px"
+            class="fragment"
+            data-fragment-index="1"
+          >
+            Perspective
+          </p>
+          <p
+            style="font-size: 28px; color: white; margin: 30px"
+            class="fragment"
+            data-fragment-index="1"
+          >
+            Stereo Camera
+          </p>
+          <p
+            style="font-size: 28px; color: white; margin: 30px"
+            class="fragment"
+            data-fragment-index="1"
+          >
+            Orthographic
+          </p>
+          <p
+            style="font-size: 28px; color: white; margin: 30px"
+            class="fragment"
+            data-fragment-index="1"
+          >
+            Cube
+          </p>
+        </section>
+
+        <section>
+          <p
+            style="font-size: 30px; color: black; margin: 30px"
+            class="fragment"
+            data-fragment-index="1"
+          >
+            Perspective camera
+          </p>
+          <img
+            class="fragment"
+            data-fragment-index="2"
+            src="https://habrastorage.org/r/w1560/webt/5q/ep/20/5qep20pewjasmk4gyhbmkzrfs5c.jpeg"
+            alt=""
+          />
+        </section>
+
+        <section>
+          <p
+            style="font-size: 30px; color: black; margin: 30px"
+            class="fragment"
+            data-fragment-index="1"
+          >
+            Orthographic camera
+          </p>
+          <img
+            class="fragment"
+            data-fragment-index="2"
+            src="https://habrastorage.org/r/w1560/webt/d9/ni/t0/d9nit0dydsge5svwiblgu51odxm.jpeg"
+            alt=""
+          />
+        </section>
+
+        <section>
+          <h5 class="fragment" data-fragment-index="1">Lighting in Three.js</h5>
+          <img
+            class="fragment"
+            data-fragment-index="2"
+            src="https://3dmaster.ru/img/lessons/3dsmax/lesson013/apple4.jpg"
+            alt=""
+          />
+        </section>
+
+        <section>
+          <h3
+            style="font-size: 26px; margin: 5px"
+            class="fragment"
+            data-fragment-index="1"
+          >
+            "Lighting" is divided into several types:
+          </h3>
+          <p
+            style="font-size: 18px; color: white; margin: 5px"
+            class="fragment"
+            data-fragment-index="2"
+          >
+            Ambient light
+          </p>
+          <p
+            style="font-size: 18px; color: white; margin: 5px"
+            class="fragment"
+            data-fragment-index="2"
+          >
+            Directional light
+          </p>
+          <p
+            style="font-size: 18px; color: white; margin: 5px"
+            class="fragment"
+            data-fragment-index="2"
+          >
+            Point light
+          </p>
+          <p
+            style="font-size: 18px; color: white; margin: 5px"
+            class="fragment"
+            data-fragment-index="2"
+          >
+            Spot light
+          </p>
+          <img
+            style="width: 70%"
+            class="fragment"
+            data-fragment-index="3"
+            src="https://habrastorage.org/r/w1560/webt/rw/yv/ud/rwyvudsp3ztknpnczfi5uakl3wa.jpeg"
+            alt=""
+          />
+        </section>
+
+        <section>
+          <h3>Three.js examples:</h3>
+          <a href="https://vrseat.vercel.app/">CLICK</a>
+          <a href="https://pendereckisgarden.pl/en/the-maestros-manor">CLICK</a>
+          <a href="https://logartis.info/">CLICK</a>
+          <a href="https://particle-love.com/">CLICK</a>
+          <a href="https://helloenjoy.itch.io/hellorun">CLICK</a>
+        </section>
+
+        <section>
+          <img
+            src="https://media.istockphoto.com/id/1366229205/video/neon-thank-you-text-animation-for-outro-video-content.jpg?b=1&s=640x640&k=20&c=OdF24rkPQyaztGYf0bFLttTFbAgTNL1l9PXvo6kbOZE="
+            alt=""
+          />
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
